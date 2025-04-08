@@ -1,19 +1,20 @@
-
 from flask import Flask, request, jsonify, send_file, render_template
 from yt_dlp import YoutubeDL
 import os
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 DOWNLOAD_FOLDER = "downloads"
+COOKIE_FILE = "cookies.txt"
 os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
 
 def get_ydl_opts(format_id=None):
     opts = {
-        "cookiefile": "cookies.txt",
+        "cookiefile": COOKIE_FILE,
         "quiet": True,
         "noplaylist": True,
         "nocheckcertificate": True,
         "outtmpl": os.path.join(DOWNLOAD_FOLDER, "%(title)s.%(ext)s"),
+        "ignoreerrors": True,
     }
     if format_id:
         opts["format"] = format_id

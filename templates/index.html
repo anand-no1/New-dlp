@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snapsave - Anand GT</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <div class="container">
+    <img src="/static/logo.png" class="logo" />
+    <h1 class="glow-text">Anand GT</h1>
+    <p class="creator">Created by Anand</p>
+
+    <div class="input-group">
+      <input type="text" id="videoURL" placeholder="Paste YouTube or Facebook link..." />
+      <button onclick="fetchInfo()">Fetch Video</button>
+    </div>
+
+    <div id="loader" class="loader"></div>
+
+    <div id="preview" class="preview hidden">
+      <img id="thumbnail" src="" />
+      <h2 id="title"></h2>
+      <div id="qualityButtons"></div>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Anand GT. All rights reserved.</footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
